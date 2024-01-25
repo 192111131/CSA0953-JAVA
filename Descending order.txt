@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class SortingExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int size;
+
+        System.out.print("Enter the size of the array: ");
+        size = scanner.nextInt();
+
+        int[] a = new int[size];
+        int temp;
+        int i, j;
+
+        System.out.print("Enter the numbers in an array:");
+
+        for (i = 0; i < size; i++) {
+            a[i] = scanner.nextInt();
+        }
+        for (i = 0; i < size; i++) {
+            for (j = i + 1; j < size; j++) {
+                if (a[i] < a[j]) {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+
+        System.out.print("\nAfter Sorting (Descending Order): ");
+        for (i = 0; i < size; i++) {
+            System.out.print(a[i] + " ");
+        }
+
+        scanner.close();
+    }
+}
